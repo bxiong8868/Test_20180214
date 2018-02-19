@@ -19,7 +19,7 @@ pipeline {
         stage('Test 2 in parallel') {
           steps {
             echo 'test 2'
-            junit 'tartget/test-results/**/TEST*.xml'
+            junit 'target/test-results/**/TEST*.xml'
           }
         }
       }
