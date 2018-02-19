@@ -8,11 +8,19 @@ pipeline {
       }
     }
     stage('Stage2-Test') {
-      steps {
-        echo 'Starting testing 1'
-        sleep 2
-        echo 'Pass testing 1'
-        junit(allowEmptyResults: true, testResults: 'target/**/TEST*.xml')
+      parallel {
+        stage('Stage2-Test') {
+          steps {
+            echo 'Starting testing 1'
+            sleep 2
+            echo 'Pass testing 1'
+          }
+        }
+        stage('Test 2 in parallel') {
+          steps {
+            echo 'test 2'
+          }
+        }
       }
     }
     stage('Stage3-Deploy') {
