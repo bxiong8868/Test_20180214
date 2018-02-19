@@ -9,7 +9,8 @@ pipeline {
     stage('Stage2-Test') {
       steps {
         echo 'Starting testing 1'
-        sh 'echo Success!'
+        sleep 2
+        echo 'Pass testing 1'
       }
     }
     stage('Stage3-Deploy') {
