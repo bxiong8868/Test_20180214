@@ -12,7 +12,7 @@ pipeline {
         echo 'Starting testing 1'
         sleep 2
         echo 'Pass testing 1'
-        junit 'target/**/TEST.xml'
+        junit 'target/**/TEST*.xml'
       }
     }
     stage('Stage3-Deploy') {
