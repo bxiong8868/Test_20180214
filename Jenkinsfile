@@ -4,7 +4,7 @@ pipeline {
     stage('Stage1-Build') {
       steps {
         echo 'Starting Build stage'
-        archiveArtifacts 'target/*.jar'
+        archiveArtifacts(artifacts: 'target/*.jar', allowEmptyArchive: true)
       }
     }
     stage('Stage2-Test') {
